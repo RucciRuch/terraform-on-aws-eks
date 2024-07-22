@@ -19,7 +19,7 @@ resource "null_resource" "copy_ec2_keys" {
   provisioner "remote-exec" {
     inline = [
       "sudo mv /home/ec2-user/eks-terraform-key.pem /tmp/eks-terraform-key.pem",
-      "sudo chmod 600 /tmp/eks-terraform-key.pem"
+      "sudo chmod 400 /tmp/eks-terraform-key.pem"
     ]
   }
   # # File Provisioner: Copies the terraform-key.pem file to /tmp/eks-terraform-key.pem
