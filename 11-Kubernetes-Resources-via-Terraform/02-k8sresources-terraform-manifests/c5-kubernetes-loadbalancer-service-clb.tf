@@ -15,3 +15,4 @@ resource "kubernetes_service_v1" "lb_service" {
     type = "LoadBalancer"
   }
 }
+
