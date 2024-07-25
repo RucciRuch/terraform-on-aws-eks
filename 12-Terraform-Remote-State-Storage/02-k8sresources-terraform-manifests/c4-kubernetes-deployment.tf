@@ -1,12 +1,12 @@
-# Kubernetes Deployment Manifest
+# Kubernetes Deployment Manifest 
 resource "kubernetes_deployment_v1" "myapp1" {
   metadata {
     name = "myapp1-deployment"
     labels = {
       app = "myapp1"
     }
-  } 
- 
+  }
+
   spec {
     replicas = 2
 
@@ -30,9 +30,10 @@ resource "kubernetes_deployment_v1" "myapp1" {
           port {
             container_port = 80
           }
-          }
         }
       }
     }
+  }
 }
+
 
