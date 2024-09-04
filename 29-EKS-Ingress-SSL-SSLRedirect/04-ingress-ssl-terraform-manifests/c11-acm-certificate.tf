@@ -1,6 +1,6 @@
 # Resource: ACM Certificate
 resource "aws_acm_certificate" "acm_cert" {
-  domain_name       = "*.stacksimplify.com"
+  domain_name       = "*.kubeoncloud1.com"
   validation_method = "DNS"
 
   tags = {
@@ -9,12 +9,12 @@ resource "aws_acm_certificate" "acm_cert" {
 
   lifecycle {
     create_before_destroy = true
-   }
+  }
 }
 
 # Outputs
 output "acm_certificate_id" {
-  value = aws_acm_certificate.acm_cert.id 
+  value = aws_acm_certificate.acm_cert.id
 }
 
 output "acm_certificate_arn" {
