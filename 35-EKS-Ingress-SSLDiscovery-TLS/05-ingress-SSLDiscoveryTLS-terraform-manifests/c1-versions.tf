@@ -1,31 +1,31 @@
 # Terraform Settings Block
 terraform {
-  required_version = ">= 1.6.0"
+  required_version = "~> 1.9.2"
   required_providers {
     aws = {
       source = "hashicorp/aws"
       #version = ">= 4.65"
-      version = ">= 5.31"
+      version = "~> 5.58"
     }
     kubernetes = {
       source = "hashicorp/kubernetes"
       #version = "~> 2.7"
-      version = ">= 2.20"
-    }  
+      version = "~> 2.32.0"
+    }
     time = {
-      source = "hashicorp/time"
-      version = "~> 0.7"
+      source  = "hashicorp/time"
+      version = "~> 0.12"
     }
   }
   # Adding Backend as S3 for Remote State Storage
   backend "s3" {
-    bucket = "terraform-on-aws-eks"
+    bucket = "terraform-on-aws-eks-oao"
     key    = "dev/aws-lbc-ingress/terraform.tfstate"
-    region = "us-east-1" 
+    region = "us-east-2"
 
     # For State Locking
-    dynamodb_table = "dev-aws-lbc-ingress"    
-  }    
+    dynamodb_table = "dev-aws-lbc-ingress"
+  }
 }
 
 # Time Provider
