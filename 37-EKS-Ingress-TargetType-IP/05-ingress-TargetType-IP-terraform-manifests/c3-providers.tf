@@ -1,6 +1,6 @@
 # Terraform AWS Provider Block
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-2"
 }
 
 data "aws_eks_cluster" "cluster" {
